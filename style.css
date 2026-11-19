@@ -5,7 +5,7 @@ body{margin:0;background:var(--paper);color:var(--ink);font-family:"Montserrat",
 a{color:inherit}
 .hero{min-height:720px;position:relative;display:flex;flex-direction:column;overflow:hidden;background:var(--paper)}
 .floral{pointer-events:none;background-repeat:no-repeat;background-size:100% auto}
-.floral-top{position:absolute;inset:0 0 auto;height:210px;background-image:url("images/virag-felso.jpg");background-position:top center;opacity:.95}
+.floral-top{position:absolute;inset:0 0 auto;height:210px;background-image:url("images/virag-felso_uj.png");background-position:top center;opacity:.95}
 .nav{position:relative;z-index:2;width:min(1120px,90%);margin:0 auto;padding:28px 0;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(200,166,106,.25)}
 .nav-brand{font-family:"Cormorant Garamond",serif;font-size:23px;letter-spacing:.16em;text-decoration:none}
 .nav-brand span{color:var(--gold);font-style:italic}
