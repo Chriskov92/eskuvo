@@ -1,7 +1,7 @@
 *{box-sizing:border-box}
 :root{--ink:#282521;--muted:#6e6a61;--gold:#c8a66a;--green:#526b53;--paper:#fffefa;--soft:#faf8f2}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:"Montserrat",sans-serif;line-height:1.7}
+body{margin:0;padding-top:100px;background:var(--paper);color:var(--ink);font-family:"Montserrat",sans-serif;line-height:1.7}
 a{color:inherit}
 .hero{min-height:720px;position:relative;display:flex;flex-direction:column;overflow:hidden;background:var(--paper)}
 .floral{pointer-events:none;background-repeat:no-repeat;background-size:100% auto}
