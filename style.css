@@ -54,7 +54,7 @@ a{color:inherit}
 .timeline-item time{font-family:"Cormorant Garamond",serif;font-size:22px;text-align:right}
 .timeline-dot{justify-self:center;width:9px;height:9px;border-radius:50%;background:var(--gold);border:2px solid var(--paper);z-index:1;box-shadow:0 0 0 1px var(--gold)}
 .timeline-item h3{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:24px;letter-spacing:.035em;margin:0 0 0 12px;text-transform:uppercase}
-.rsvp-section{padding:32px 20px 28px;background:var(--soft);border-top:1px solid #eadfc9;border-bottom:1px solid #eadfc9}
+.rsvp-section{background:#f7f5ee;text-align:center;border-top:1px solid #f0eadf;border-bottom:1px solid #f0eadf}
 .rsvp-section .section{padding:75px 0}
 .rsvp-section h2{font-size:43px}
 .rsvp-section .section>p:not(.eyebrow){font-family:"Cormorant Garamond",serif;font-size:21px;color:var(--muted);line-height:1.45}
