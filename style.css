@@ -11,7 +11,7 @@ a{color:inherit}
 .nav-brand span{color:var(--gold);font-style:italic}
 .nav-links{display:flex;gap:28px}.nav-links a{font-size:10px;letter-spacing:.13em;text-decoration:none;text-transform:uppercase;color:var(--muted)}
 .hero-content{position:relative;z-index:1;text-align:center;margin:auto;width:min(850px,90%);padding:125px 0 80px}
-.eyebrow{font-size:30px;letter-spacing:.22em;font-weight:600;color:#9a8052;margin:0 0 20px}
+.eyebrow{font-size:18px;letter-spacing:.22em;font-weight:600;color:#9a8052;margin:0 0 20px}
 .names{display:flex;flex-direction:column;align-items:center;font-family:"Cormorant Garamond",serif;font-size:clamp(48px,7vw,75px);font-weight:500;line-height:.85;letter-spacing:.045em;text-transform:uppercase}
 .names .ampersand{font-size:.75em;font-weight:400;color:var(--gold);font-style:italic;line-height:1.05}
 .gold-rule{display:flex;align-items:center;justify-content:center;gap:16px;color:var(--gold);margin:27px auto 20px}
