@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <canvas id="arany-por"></canvas>
   <header class="hero" id="top">
     <div class="floral floral-top" aria-hidden="true"></div>
     <div class="hero-content">
@@ -95,5 +96,117 @@
     <div class="floral floral-footer" aria-hidden="true"></div>
   </footer>
   <script src="script.js"></script>
+<script>
+  // --- 1. VIRÁGOS FEJLÉC ÉS ARANY POR VÁLTOZÓI ---
+  const turbulencia = document.getElementById('szel-turbulencia');
+  const canvas = document.getElementById('arany-por');
+  const ctx = canvas.getContext('2d');
+  
+  let reszecskek = [];
+  let utolsoScroll = window.scrollY;
+  let scrollSebesseg = 0; // Ez tárolja, milyen gyorsan görget éppen a látogató
+
+  function meretezes() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', meretezes);
+  meretezes();
+
+  // --- 2. GÖRGETÉS FIGYELÉSE (VIRÁGOK + GÖMBÖK) ---
+  window.addEventListener('scroll', function() {
+    const aktualisScroll = window.scrollY;
+    
+    // Kiszámoljuk a görgetés sebességét és irányát
+    scrollSebesseg = (aktualisScroll - utolsoScroll) * 0.15;
+    utolsoScroll = aktualisScroll;
+
+    // Ha bent van a virágos hullámzás szűrő, azt is mozgatja
+    if (turbulencia) {
+      const freqX = 0.005 + Math.sin(aktualisScroll * 0.005) * 0.002;
+      const freqY = 0.015 + Math.cos(aktualisScroll * 0.004) * 0.003;
+      turbulencia.setAttribute('baseFrequency', `${freqX} ${freqY}`);
+    }
+  }, { passive: true });
+
+  // --- 3. ARANY GÖMBÖK OSZTÁLYA ---
+    class AranyGomb {
+    constructor() {
+      this.reset();
+      this.y = Math.random() * canvas.height;
+    }
+
+    reset() {
+      this.x = szelsoPozicio(); // <-- ITT HASZNÁLJUK AZ ÚJ FÜGGVÉNYT
+      this.y = Math.random() > 0.5 ? canvas.height - 10 : -10;
+      this.meret = Math.random() * 3.5 + 1.5;
+      this.sebessegY = Math.random() * 0.4 - 0.15;
+      this.sebessegX = (Math.random() - 0.5) * 0.3;
+      this.atlatszosag = Math.random() * 0.5 + 0.2;
+      this.fazis = Math.random() * Math.PI * 2;
+      this.erzekenyseg = this.meret * 0.35; 
+    }
+
+    frissit() {
+      this.y -= this.sebessegY + (scrollSebesseg * this.erzekenyseg);
+      this.x += this.sebessegX + Math.sin(this.fazis) * (0.15 + Math.abs(scrollSebesseg) * 0.05);
+      this.fazis += 0.02;
+
+      if (this.y < -15) {
+        this.y = canvas.height + 10;
+        this.x = szelsoPozicio(); // <-- ÉS ITT IS
+      } else if (this.y > canvas.height + 15) {
+        this.y = -10;
+        this.x = szelsoPozicio(); // <-- ÉS ITT IS
+      }
+    }
+
+    rajzol() {
+      const gradient = ctx.createRadialGradient(
+        this.x, this.y, 0, 
+        this.x, this.y, this.meret * 2
+      );
+      gradient.addColorStop(0, `rgba(218, 175, 85, ${this.atlatszosag})`);
+      gradient.addColorStop(1, 'rgba(218, 175, 85, 0)');
+
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.meret * 2, 0, Math.PI * 2);
+      ctx.fillStyle = gradient;
+      ctx.fill();
+    }
+  }
+
+  for (let i = 0; i < 15; i++) {
+    reszecskek.push(new AranyGomb());
+  }
+
+  // --- 4. ANIMÁCIÓS CIKLUS ---
+  function animalas() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    reszecskek.forEach(p => {
+      p.frissit();
+      p.rajzol();
+    });
+
+    // Csillapítás: ha megáll a görgetés, a lökés fokozatosan lelassul (0-ra csökken)
+    scrollSebesseg *= 0.92;
+
+    requestAnimationFrame(animalas);
+  }
+  animalas();
+  // --- ÚJ SEGÉDFÜGGVÉNY: Csak a képernyő két szélén helyezi el a gömböket ---
+  function szelsoPozicio() {
+    // A képernyő szélességének hány százaléka legyen a bal és jobb oldali sáv (0.28 = 28% balra, 28% jobbra)
+    const savSzelesseg = 0.28; 
+    
+    // 50-50% eséllyel a bal vagy a jobb oldalra kerül
+    if (Math.random() < 0.5) {
+      return Math.random() * (canvas.width * savSzelesseg); // Bal szél
+    } else {
+      return canvas.width - (Math.random() * (canvas.width * savSzelesseg)); // Jobb szél
+    }
+  }
+</script>
 </body>
 </html>

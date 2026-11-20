@@ -2,6 +2,15 @@
 :root{--ink:#282521;--muted:#6e6a61;--gold:#c8a66a;--green:#526b53;--paper:#fffefa;--soft:#faf8f2}
 html{scroll-behavior:smooth}
 body{margin:0;padding-top:80px;background:var(--paper);color:var(--ink);font-family:"Montserrat",sans-serif;line-height:1.7}
+#arany-por {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Nagyon fontos: így a gombokra ugyanúgy rá lehet kattintani */
+  z-index: 50; /* A szöveg felett, de a virágok (z-index: 100) alatt lebegjenek */
+}
 a{color:inherit}
 .hero{min-height:720px;position:relative;display:flex;flex-direction:column;overflow:hidden;background:var(--paper)}
 .floral{pointer-events:none;background-repeat:no-repeat;background-size:100% auto}
