@@ -60,6 +60,8 @@ a{color:inherit}
 .rsvp-section h3{font-size:25px}
 .rsvp-section .section>p:not(.eyebrow){font-family:"Cormorant Garamond",serif;font-size:21px;color:var(--muted);line-height:1.45}
 .form-coming{display:inline-block;margin-top:15px;border:1px solid #d9c9a9;padding:12px 20px;color:#8e7449;font-size:10px;letter-spacing:.08em}
+.ajandek{text-align:center}
+.ajandek h1{font-size:43px}
 .contact-section{text-align:center;padding-top:80px;padding-bottom:55px}
 .contact-section h2{font-size:25px}
 .contact-grid{display:flex;justify-content:center;gap:70px;flex-wrap:wrap;margin:35px 0}
