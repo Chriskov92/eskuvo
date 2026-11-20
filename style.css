@@ -68,7 +68,7 @@ a{color:inherit}
 }
 .ajandek h1{max-width: 650px;margin: 10px auto 0;font-family: "Cormorant Garamond", serif;font-size: clamp(21px, 4.5vw, 25px);line-height: 1.45;padding: 0 0px;font-weight: 400;width: 100%;text-align: center}
 .contact-section{text-align:center;padding-top:10px;padding-bottom:95px}
-.contact-section h1{max-width: 650px;margin: 30px auto 0;font-family: "Cormorant Garamond", serif;font-size: clamp(21px, 4.5vw, 25px);line-height: 1.45;padding: 0 20px;font-weight: 400;}
+.contact-section h1{max-width: 650px;margin: 60px auto 0;font-family: "Cormorant Garamond", serif;font-size: clamp(21px, 4.5vw, 25px);line-height: 1.45;padding: 0 20px;font-weight: 400;}
 .contact-grid{display:flex;justify-content:center;gap:70px;flex-wrap:wrap;margin:35px 0}
 .contact-grid a{display:flex;flex-direction:column;gap:4px;text-decoration:none}
 .contact-grid span{font-size:15px;letter-spacing:.17em;text-transform:uppercase;color:#9a8052}
