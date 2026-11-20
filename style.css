@@ -96,10 +96,9 @@ footer span{font-size:9px;letter-spacing:.2em;color:#8f846f}
 #program .eyebrow {font-size: 18px;letter-spacing: .22em;font-weight: 600;color: #9a8052;margin: 0 0 20px;text-align: center;}
 @media(max-width:650px){
  .hero{min-height:670px}.floral-top{height:135px;background-size:auto 135px;background-position:top center}
- .nav{padding:18px 0}.nav-links{gap:12px}.nav-links a{font-size:8px;letter-spacing:.08em}.nav-brand{font-size:19px}
- .hero-content{padding:115px 0 55px}.names{font-size:clamp(48px,13vw,72px)}
+ .hero-content{padding:100px 0 55px}.names{font-size:clamp(48px,13vw,72px)}
  .hero-date{font-size:25px}.hero-subtitle{font-size:19px}
- .section{padding:35px 0}.welcome{padding-top:5px}
+ .section{padding:20px 0}.welcome{padding-top:5px}
  .venue-card h2,.section h2,.countdown-inner h2{font-size:25px}
  .countdown{gap:0}.countdown div{padding:0 3px}.countdown strong{font-size:42px}.countdown span{font-size:7px;letter-spacing:.08em}
  .timeline:before{left:76px}.timeline-item{grid-template-columns:62px 28px 1fr;min-height:61px}
