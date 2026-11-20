@@ -107,6 +107,7 @@ footer span{font-size:9px;letter-spacing:.2em;color:#8f846f}
  .section-heading h2,.rsvp-section h2,.contact-section h2{font-size:36px}
  .contact-grid{gap:20px;flex-direction:column}.contact-grid strong{font-size:22px}
  .floral-corner{width:130px;height:130px;background-size:auto 130px}
+  .ajandek {width: 90%;max-width: 90%;margin: 80px auto;padding: 0 0px;}
 }
 header#top.hero {
   min-height: 200 !important;
