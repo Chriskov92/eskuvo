@@ -26,15 +26,15 @@ a{color:inherit}
 .section{width:min(1000px,90%);margin:0 auto;padding:30px 0}
 .narrow{max-width:760px;text-align:center}
 .welcome{text-align:center;padding-top:40px;}
-.welcome h1{max-width:780px;margin:0 auto;font-family:"Cormorant Garamond",serif;font-size:clamp(14px,2vw,25px);font-weight:400;line-height:1.35}
+.welcome h1{max-width: 650px;margin: 30px auto 0;font-family: "Cormorant Garamond", serif;font-size: clamp(21px, 4.5vw, 25px);line-height: 1.45;padding: 0 20px;font-weight: 400;}
 .welcome .gold-rule{margin:25px auto 35px}
 .venue-card{padding:32px 20px 28px;background:var(--soft);border-top:1px solid #eadfc9;border-bottom:1px solid #eadfc9}
 .venue-card .eyebrow{margin-bottom:8px}
-.venue-card h2,.section h2,.countdown-inner h2{font-family:"Cormorant Garamond",serif;font-size:38px;font-weight:500;margin:0 0 4px}
+.venue-card h2,.section h2,.countdown-inner h2{font-family:"Cormorant Garamond",serif;font-size:30px;font-weight:500;margin:0 0 4px}
 .venue-card h3{font-family:"Cormorant Garamond",serif;font-size:28px;font-weight:500;margin:12px 0 0}
 .venue-card p:not(.eyebrow){margin:0;color:var(--muted);font-size:13px}
 .map-link{display:inline-block;margin-top:18px;color:#8e7449;font-size:13px;letter-spacing:.13em;text-underline-offset:4px}
-.venue-note{max-width:650px;margin:60px auto 0;(--muted);font-family:"Cormorant Garamond",serif;font-size:25px;line-height:1.45}
+.venue-note {max-width: 650px;margin: 60px auto 0;font-family: "Cormorant Garamond", serif;font-size: clamp(21px, 4.5vw, 25px);line-height: 1.45;padding: 0 20px;}
 .countdown-section {background: transparent;border: none;padding: 0;text-align: center;}
 .countdown-inner{padding:72px 0}
 .floral-corner{position:absolute;right:0;top:0;width:230px;height:230px;background-image:url("images/virag-sarok-felso.jpg");background-position:top right;opacity:.28}
@@ -60,10 +60,10 @@ a{color:inherit}
 .rsvp-section h3{font-size:25px}
 .rsvp-section .section>p:not(.eyebrow){font-family:"Cormorant Garamond",serif;font-size:21px;color:var(--muted);line-height:1.45}
 .form-coming{display:inline-block;margin-top:15px;border:1px solid #d9c9a9;padding:12px 20px;color:#8e7449;font-size:10px;letter-spacing:.08em}
-.ajandek{text-align:center}
-.ajandek h1{max-width:780px;margin:0 auto;font-family:"Cormorant Garamond",serif;font-size:clamp(14px,2vw,25px);font-weight:400;line-height:1.35}
-.contact-section{text-align:center;padding-top:80px;padding-bottom:55px}
-.contact-section h2{font-size:25px}
+.ajandek{text-align:center;margin:80px}
+.ajandek h1{max-width: 650px;margin: 30px auto 0;font-family: "Cormorant Garamond", serif;font-size: clamp(21px, 4.5vw, 25px);line-height: 1.45;padding: 0 20px;font-weight: 400;}
+.contact-section{text-align:center;padding-top:10px;padding-bottom:95px}
+.contact-section h1{max-width: 650px;margin: 30px auto 0;font-family: "Cormorant Garamond", serif;font-size: clamp(21px, 4.5vw, 25px);line-height: 1.45;padding: 0 20px;font-weight: 400;}
 .contact-grid{display:flex;justify-content:center;gap:70px;flex-wrap:wrap;margin:35px 0}
 .contact-grid a{display:flex;flex-direction:column;gap:4px;text-decoration:none}
 .contact-grid span{font-size:15px;letter-spacing:.17em;text-transform:uppercase;color:#9a8052}
@@ -71,8 +71,20 @@ a{color:inherit}
 .closing{font-family:"Cormorant Garamond",serif;font-size:22px;color:var(--muted)}
 .signature{font-family:"Cormorant Garamond",serif;font-size:36px;letter-spacing:.06em;margin-top:15px}
 .signature i{color:var(--gold);font-size:1.2em}
-footer{position:relative;overflow:hidden;text-align:center;padding:85px 20px 35px;background:#f7f5ee}
-.floral-footer{position:absolute;inset:auto 0 0;height:170px;background-image:url("images/virag-also.jpg");background-position:bottom center}
+footer{position:relative;overflow:visible;text-align:center;padding:85px 20px 35px}
+.floral-footer {
+  position: absolute;
+  inset: auto 0 0;
+  height: 210px;
+  background-image: url("images/virag-also_uj.png");
+  background-position: bottom center;
+  /* Nagy monitoron 100%-ra igazodik, mobilon megáll 900px-es méretnél */
+  background-size: max(100%, 900px) auto; 
+  background-repeat: no-repeat;
+  opacity: .95;
+  z-index: 10;
+  pointer-events: none;
+}
 footer p,footer span{position:relative;z-index:1}
 footer p{font-family:"Cormorant Garamond",serif;font-size:25px;margin:0}
 footer span{font-size:9px;letter-spacing:.2em;color:#8f846f}
@@ -82,9 +94,8 @@ footer span{font-size:9px;letter-spacing:.2em;color:#8f846f}
  .nav{padding:18px 0}.nav-links{gap:12px}.nav-links a{font-size:8px;letter-spacing:.08em}.nav-brand{font-size:19px}
  .hero-content{padding:115px 0 55px}.names{font-size:clamp(48px,13vw,72px)}
  .hero-date{font-size:25px}.hero-subtitle{font-size:19px}
- .section{padding:65px 0}.welcome{padding-top:5px}.welcome h1{font-size:26px}
- .venue-card h2,.section h2,.countdown-inner h2{font-size:34px}
- .venue-note{font-size:19px}.countdown-inner{padding:60px 0}
+ .section{padding:65px 0}.welcome{padding-top:5px}
+ .venue-card h2,.section h2,.countdown-inner h2{font-size:25px}
  .countdown{gap:0}.countdown div{padding:0 3px}.countdown strong{font-size:42px}.countdown span{font-size:7px;letter-spacing:.08em}
  .timeline:before{left:76px}.timeline-item{grid-template-columns:62px 28px 1fr;min-height:61px}
  .timeline-item time{font-size:19px}.timeline-item h3{font-size:19px;margin-left:8px}
